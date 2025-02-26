@@ -1,0 +1,12 @@
+
+        body {
+            overflow: hidden; /* Скрываем прокрутку */
+        }
+        .ad-container {
+            position: absolute;
+            width: 300px; /* Ширина рекламы */
+            display: none; /* Изначально скрыто */
+        }
+        .ad-image {
+            width: 100%; /* Изображение адаптивное по ширине контейнера */
+        }
