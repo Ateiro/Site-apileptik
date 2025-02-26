@@ -9,7 +9,6 @@
   <link rel="icon" href="2.ico" type="image/x-icon" />
   <title>ЭПИЛЕПТИКТОЧКАРУ</title>
    <style>
-
          body {
             overflow: hidden;
             margin: 0;
@@ -19,9 +18,24 @@
 
         .moving-object {
             position: absolute;
-            width: 400px;
+            width: 400px; /* Размер по умолчанию */
             background: white;
             border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .ad-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .ad-text {
+            padding: 8px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
         }
 
         .box {
@@ -29,26 +43,61 @@
           height: 100px;
           background-color: blue;
         }
+
         .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон (можно убрать, если не нужен) */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999; /* Помещение поверх других элементов */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
         }
 
         .fullscreen-image {
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
-        height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
         }
 
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            .moving-object {
+                width: 200px; /* Уменьшаем ширину для мобильных устройств */
+            }
+
+            .ad-text {
+                font-size: 14px; /* Уменьшаем размер текста */
+            }
+
+            .box {
+                width: 80px; /* Уменьшаем размер блока */
+                height: 80px;
+            }
+
+            .overlay img {
+                width: 90%; /* Уменьшаем изображение на мобильных устройствах */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .moving-object {
+                width: 150px; /* Еще меньше для очень маленьких экранов */
+            }
+
+            .ad-text {
+                font-size: 12px; /* Еще меньше текст */
+            }
+
+            .box {
+                width: 60px; /* Еще меньше блок */
+                height: 60px;
+            }
+        }
   </style>
 </head>
 
